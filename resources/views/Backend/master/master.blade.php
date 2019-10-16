@@ -398,7 +398,6 @@
 </script>
 <script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
 
-<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 @stack('scripts')
 </body>
 </html>
