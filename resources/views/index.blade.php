@@ -58,17 +58,21 @@
                                 <a href="index.html">Home</a>
                             </li>
                             <li class="has-children">
-                                <a href="destination.html">Explore</a>
+                                <a href="destination.blade.php">Explore</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Japan</a></li>
-                                    <li><a href="#">Europe</a></li>
-                                    <li><a href="#">China</a></li>
-                                    <li><a href="#">France</a></li>
+                                    <li class="has-children"><a href="#">Eat & Drink</a>
+                                        <ul class="dropdown">
+                                            <li><a href="{{route('destination')}}">manish</a> </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Locals Way</a></li>
+                                    <li><a href="#">Hotels & Destination</a></li>
+                                    <li><a href="#">Resorts</a></li>
                                 </ul>
                             </li>
 
                             <li class="has-children">
-                                <a href="destination.html">Things to do</a>
+                                <a href="destination.blade.php">Things to do</a>
                                 <ul class="dropdown">
                                     <li><a href="#">Japan</a></li>
                                     <li><a href="#">Europe</a></li>
@@ -76,9 +80,9 @@
                                     <li><a href="#">France</a></li>
                                 </ul>
                             </li>
-                            <li><a href="about.html">Travel News</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="about.blade.php">Travel News</a></li>
+                            <li><a href="about.blade.php">About</a></li>
+                            <li><a href="contact.blade.php">Blog</a></li>
 
                             <li><a href="contact.html">Contact</a></li>
                             <!-- <li><a href="booking.html">Book Online</a></li> -->
@@ -631,6 +635,5 @@
 <script src="js/aos.js"></script>
 
 <script src="js/main.js"></script>
-
 </body>
 </html>
