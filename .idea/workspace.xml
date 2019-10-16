@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5a24d517-fbd8-4146-bca8-6f5d445c7a2e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="5a24d517-fbd8-4146-bca8-6f5d445c7a2e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -284,12 +281,12 @@
       <workItem from="1570769376775" duration="5246000" />
       <workItem from="1571141290828" duration="156000" />
       <workItem from="1571191821161" duration="3595000" />
-      <workItem from="1571200684249" duration="1446000" />
+      <workItem from="1571200684249" duration="1718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15510000" />
+    <option name="totallyTimeSpent" value="15782000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
