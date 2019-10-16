@@ -6,6 +6,17 @@
 
 jQuery(document).ready(function($) {
 
+    $(window).scroll(function() { // check if scroll event happened
+        if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+            $(".site-navbar").css("background-color", "#eae8eb"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+            $(".site-navbar .site-navigation .site-menu > li > a").css("color", "black");
+        } else {
+            $(".site-navbar").css({"background-color":"rebeccapurple"}); // if not, change it back to transparent
+            $(".site-navbar .site-navigation .site-menu > li > a").css("color", "#FFFFFF");
+
+        }
+    });
+
 	"use strict";
 
 	
