@@ -201,8 +201,24 @@
         </div>
 
     </div>
-
-
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class=""><a href="#"><img
+                                src="{{asset('images/banner-2.jpg')}}" width="100%" height="150px" alt=""></a></div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class=""><a href="#"><img
+                                src="{{asset('images/banner-3.jpg')}}" width="100%" height="150px" alt=""></a></div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class=""><a href="#"><img
+                                src="{{asset('images/banner-1.jpg')}}" width="100%" height="150px" alt=""></a></div>
+            </div>
+        </div>
+    </div>
     {{--<div class="site-section">--}}
     {{--<div class="container">--}}
     {{--<div class="row align-items-stretch">--}}
