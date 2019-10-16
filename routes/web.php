@@ -15,6 +15,12 @@ Route::group(['namespace' => 'Frontend'], function () {
     Route::get('/', function () {
         return view('index');
     });
+    Route::get('/destination', function () {
+        return view('destination');
+    })->name('destination');
+//    Route::get('/blog', function () {
+//        return view('blog');
+//    })->name('blog');
 });
 Route::group(['namespace' => 'Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');

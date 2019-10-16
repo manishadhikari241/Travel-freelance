@@ -420,6 +420,7 @@ h1, h2, h3, h4, h5,
     -webkit-transition: 0.2s 0s;
     -o-transition: 0.2s 0s;
     transition: 0.2s 0s;
+    width: 300px;
 }
 
 .site-navbar .site-navigation .site-menu .has-children .dropdown.arrow-top {
@@ -741,7 +742,7 @@ h1, h2, h3, h4, h5,
 }
 
 .site-blocks-cover.inner-page-cover, .site-blocks-cover.inner-page-cover .row {
-    min-height: 600px;
+    min-height: 300px;
     height: calc(30vh);
 }
 
@@ -1605,3 +1606,5 @@ h1, h2, h3, h4, h5,
         margin-left: 0px;
     }
 }
+/* blogs css */
+
