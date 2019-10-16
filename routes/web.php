@@ -18,6 +18,10 @@ Route::group(['namespace' => 'Frontend'], function () {
 });
 Route::group(['namespace' => 'Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+
+    Route::group(['prefix' => 'Blog'], function () {
+        Route::any('/blogs', 'BlogController@blogs')->name('blog');
+    });
 });
 
 

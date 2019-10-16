@@ -385,6 +385,21 @@
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     </div>
 </div>
+<script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+
 <script type="text/javascript" src="{{asset('js/backend/main.js')}}"></script>
+
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('desc');
+    CKEDITOR.replace('about');
+    CKEDITOR.replace('key');
+
+</script>
+<script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
+
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+@stack('scripts')
 </body>
 </html>
+

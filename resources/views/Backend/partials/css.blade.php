@@ -19,3 +19,4 @@
 -->
 <link href="{{asset('css/backend/main.css')}}" rel="stylesheet">
 {{--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">--}}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet"/>
