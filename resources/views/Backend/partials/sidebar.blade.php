@@ -43,12 +43,19 @@
                 </li>
                 <li class="app-sidebar__heading">BLOGS</li>
                 <li>
-                    <a href="#">
+                    <a href="{{route('blog')}}">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         EXPLORE
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
+                    <ul>
+                        <li><a href="{{route('category')}}">Category</a></li>
+                        <li><a href="{{route('author')}}">Author</a></li>
+                        <li><a href="{{route('tags')}}">Tags</a></li>
+                        <li><a href="{{route('blog')}}">Blogs</a></li>
+                    </ul>
                 </li>
+
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-display2"></i>
