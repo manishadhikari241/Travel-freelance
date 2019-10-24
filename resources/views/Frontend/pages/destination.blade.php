@@ -63,7 +63,7 @@
                   <ul class="dropdown">
                     <li class="has-children"><a href="#">Eat & Drink</a>
                       <ul class="dropdown">
-                        <li><a href="{{route('destination')}}">manish</a> </li>
+                        <li><a href="">manish</a> </li>
                       </ul>
                     </li>
                     <li><a href="#">Locals Way</a></li>
@@ -81,11 +81,11 @@
                     <li><a href="#">France</a></li>
                   </ul>
                 </li>
-                <li><a href="about.blade.php">Travel News</a></li>
-                <li><a href="about.blade.php">About</a></li>
-                <li><a href="contact.blade.php">Blog</a></li>
+                <li><a href="../../about.blade.php">Travel News</a></li>
+                <li><a href="../../about.blade.php">About</a></li>
+                <li><a href="../../contact.blade.php">Blog</a></li>
 
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
                 <!-- <li><a href="booking.html">Book Online</a></li> -->
               </ul>
             </nav>

@@ -385,6 +385,44 @@
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     </div>
 </div>
+
 <script type="text/javascript" src="{{asset('js/backend/main.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+
+
+<script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('desc');
+    CKEDITOR.replace('about');
+    CKEDITOR.replace('key');
+
+</script>
+<script type="text/javascript" src="{{asset('js/select2.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script>
+    @if(\Illuminate\Support\Facades\Session::has('success'))
+    toastr.success("{{\Illuminate\Support\Facades\Session::get('success')}}");
+    @endif
+    @if(\Illuminate\Support\Facades\Session::has('error'))
+    toastr.error("{{\Illuminate\Support\Facades\Session::get('error')}}");
+    @endif
+    @if(\Illuminate\Support\Facades\Session::has('info'))
+    toastr.info("{{\Illuminate\Support\Facades\Session::get('info')}}");
+    @endif
+    @if ($errors->any())
+    @foreach($errors->all() as $error)
+    toastr.warning("{{ $error }}");
+    @endforeach
+    @endif
+</script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example1').DataTable();
+    });
+</script>
+@stack('scripts')
 </body>
 </html>
+
