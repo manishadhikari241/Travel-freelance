@@ -69,11 +69,17 @@
                         TRAVEL
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Widgets</li>
+                <li class="app-sidebar__heading">Slides</li>
                 <li>
-                    <a href="dashboard-boxes.html">
+                    <a href="{{route('slide-front')}}">
                         <i class="metismenu-icon pe-7s-display2"></i>
-                        Dashboard Boxes
+                        Frotnpage Sliders
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('advertisement')}}">
+                        <i class="metismenu-icon pe-7s-display2"></i>
+                        Advertisement
                     </a>
                 </li>
                 <li class="app-sidebar__heading">Forms</li>

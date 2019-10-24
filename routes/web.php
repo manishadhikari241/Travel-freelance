@@ -12,17 +12,11 @@
 */
 
 Route::group(['namespace' => 'Frontend'], function () {
-//    Route::get('/', function () {
-//        return view('index');
-//    });
-    Route::any('/','IndexController@index')->name('index');
 
-    Route::get('/destination', function () {
-        return view('destination');
-    })->name('destination');
-//    Route::get('/blog', function () {
-//        return view('blog');
-//    })->name('blog');
+    Route::any('/','IndexController@index')->name('index');
+    Route::any('/blogs/{id?}','IndexController@blogs')->name('blogs');
+
+//
 });
 Route::group(['namespace' => 'Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
@@ -40,6 +34,17 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::any('/tags', 'BlogController@tags')->name('tags');
         Route::any('edit-tags/{id?}', 'BlogController@edit_tags')->name('tags-edit');
         Route::any('delete-tags/{id?}', 'BlogController@delete_tags')->name('tags-delete');
+    });
+
+    Route::group(['prefix' => 'Slide'], function () {
+        Route::any('slide-front', 'SlideController@slide_front')->name('slide-front');
+        Route::any('/advertisement', 'SlideController@advertisements')->name('advertisement');
+        Route::any('slide-front-edit/{id?}', 'SlideController@slide_front_edit')->name('slide-front-edit');
+        Route::get('slide-delete/{id}', 'SlideController@slide_delete')->name('slide-delete');
+        Route::get('advertisement-delete/{id}', 'SlideController@advertisement_delete')->name('advertisement-delete');
+        Route::any('advertisement-edit/{id?}', 'SlideController@advertisement_edit')->name('advertisement-edit');
+
+
     });
 });
 

@@ -31,13 +31,13 @@ class BlogController extends BackendController
         }
         if ($request->isMethod('post'))
         {
-//            $request->validate([
-//                'name'=>'required',
-//                'image_upload'=>'required',
-//                'tags'=>'required',
-//                'category'=>'required',
-//                'author'=>'required',
-//            ]);
+            $request->validate([
+                'name'=>'required',
+                'image_upload'=>'required',
+                'tags'=>'required',
+                'category'=>'required',
+                'author'=>'required',
+            ]);
             $data['title']=$request->name;
             $data['description']=$request->description;
             $data['category_id']=$request->category;
@@ -46,7 +46,7 @@ class BlogController extends BackendController
             $data['seo_description']=$request->seo_description;
             if ($request->hasfile('image_upload')) {
                 foreach ($request->file('image_upload') as $image) {
-                    $name = time() . '.' . $image->getClientOriginalExtension();
+                    $name = str_random() . '.' . $image->getClientOriginalExtension();
                     $image->move(public_path() . '/images/blogs/', $name);
                     $save[] = $name;
                 }
@@ -59,9 +59,8 @@ class BlogController extends BackendController
                 $img = Image::create($item);
             }
             foreach ($request->tags as $value) {
-                $table = DB::table('blog_tags')->insert(['blog_id' => $last_id, 'tag_id' => $value]);
+                 DB::table('blog_tags')->insert(['blog_id' => $last_id, 'tag_id' => $value]);
             }
-
             if($create)
             {
                 Session::flash('success','Blog added successfully');
@@ -69,6 +68,36 @@ class BlogController extends BackendController
             }
 
         }
+    }
+
+    public function delete_blog($id)
+    {
+        $find=Blog::findorfail($id);
+        $img=Image::where('blog_id','=',$id);
+        if ($img->delete()&&$this->delete_gallery($id)&&$find->delete())
+        {
+            Session::flash('success','Blog deleted successfully');
+            return redirect()->back();
+        }
+    }
+    public function delete_gallery($id)
+    {
+        $findData = Blog::findorfail($id);
+
+        foreach ($findData->images as $value)
+        {
+            $deletePath = public_path('images/blogs/' . $value->image);
+            if (file_exists($deletePath) && is_file($deletePath)) {
+                unlink($deletePath);
+            }
+        }
+
+        return true;
+    }
+
+    public function edit_blog()
+    {
+
     }
 
     public function category(Request $request)

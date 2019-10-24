@@ -55,7 +55,7 @@
                   <a href="index.html">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="destination.blade.php">Destinations</a>
+                  <a href="Frontend/destination.blade.php">Destinations</a>
                   <ul class="dropdown">
                     <li><a href="#">Japan</a></li>
                     <li><a href="#">Europe</a></li>

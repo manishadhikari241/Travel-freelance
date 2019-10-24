@@ -128,12 +128,13 @@
                             <thead>
                             <tr>
                                 <th>Sn</th>
-                                <th><i class="fa fa-image"></i></th>
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Author</th>
                                 <th>Category</th>
                                 <th>Tags</th>
+                                <th>SEO Keyword</th>
+                                <th>SEO Description</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -142,7 +143,6 @@
                             @foreach($blog as $key => $value)
                                 <tr>
                                     <td>{{++$key}}</td>
-                                    <td><img src="{{asset('images/blogs/'.$value->image)}}" width="50px"></td>
                                     <td>{{$value->title}}</td>
                                     <td>{!! $value->description !!}</td>
                                     <td>{{$value->authors->name}}</td>
@@ -153,9 +153,15 @@
                                         @endforeach
                                     </td>
                                     <td>
-                                        <a href="{{route('blog-edit',$value->id)}}" onclick="return confirm('Confirm Delete?')"
+                                        {{$value->seo_keyword}}
+                                    </td>
+                                    <td>
+                                        {{$value->seo_description}}
+                                    </td>
+                                    <td>
+                                        <a href="{{route('blog-delete',$value->id)}}" onclick="return confirm('Confirm Delete?')"
                                            class="btn btn-sm btn btn-danger"><i class="fa fa-trash"></i> </a>
-                                        <a href="{{route('blog-delete',$value->id)}}" class="btn btn-sm btn btn-primary"><i
+                                        <a href="{{route('blog-edit',$value->id)}}" class="btn btn-sm btn btn-primary"><i
                                                     class="fa fa-edit"></i> </a>
                                     </td>
                                 </tr>

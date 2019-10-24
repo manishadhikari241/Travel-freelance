@@ -58,7 +58,7 @@
                   <a href="index.html">Home</a>
                 </li>
                 <li class="has-children">
-                  <a href="destination.blade.php">Explore</a>
+                  <a href="Frontend/destination.blade.php">Explore</a>
                   <ul class="dropdown">
                     <li class="has-children"><a href="#">Eat & Drink</a>
                       <ul class="dropdown">
@@ -72,7 +72,7 @@
                 </li>
 
                 <li class="has-children">
-                  <a href="destination.blade.php">Things to do</a>
+                  <a href="Frontend/destination.blade.php">Things to do</a>
                   <ul class="dropdown">
                     <li><a href="#">Japan</a></li>
                     <li><a href="#">Europe</a></li>
