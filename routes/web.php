@@ -13,9 +13,11 @@
 
 Route::group(['namespace' => 'Frontend'], function () {
 
-    Route::any('/','IndexController@index')->name('index');
-    Route::any('/blogs/{id?}','IndexController@blogs')->name('blogs');
-    Route::any('/blogscategory/{id?}','IndexController@blogscategory')->name('blogs');
+    Route::any('/', 'IndexController@index')->name('index');
+    Route::any('/blogs/{id?}', 'IndexController@blogs')->name('blogs');
+    Route::any('/blogscategory/{id?}', 'IndexController@blogscategory')->name('blogs');
+    Route::any('/about', 'IndexController@about')->name('about');
+    Route::any('/blogs', 'IndexController@all_blogs')->name('blogs');
 
 //
 });

@@ -39,8 +39,8 @@
                             </ul>
                         </li>
                         <li><a href="../about.blade.php">Travel News</a></li>
-                        <li><a href="../about.blade.php">About</a></li>
-                        <li><a href="../contact.blade.php">Blog</a></li>
+                        <li><a href="{{route('aobut')}}">About</a></li>
+                        <li><a href="{{route('blogs')}}">Blog</a></li>
 
                         <li><a href="../contact.html">Contact</a></li>
                         <!-- <li><a href="booking.html">Book Online</a></li> -->

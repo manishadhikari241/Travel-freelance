@@ -31,4 +31,19 @@ class IndexController extends Controller
         }
         return false;
     }
+
+    public function about(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('Frontend.pages.about');
+
+        }
+    }
+    public function all_blogs(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('Frontend.pages.allblogs');
+
+        }
+    }
 }
