@@ -21,7 +21,9 @@
                                     <li class="{{$value->blogs->first()!=null?'has-children':''}}"><a href="#">{{$value->name}}</a>
                                         @if($value->blogs->first()!=null)
                                         <ul class="dropdown">
-                                            <li><a href="{{route('blogs',$value->id)}}">{{$value->blogs->first()?$value->blogs->first()->title:'-'}}</a> </li>
+                                            @foreach($value->blogs as $item)
+                                            <li><a href="{{route('blogs',$item->id)}}">{{$item->title}}</a> </li>
+                                                @endforeach
                                         </ul>
                                             @endif
                                     </li>

@@ -8,7 +8,6 @@ use App\Model\Category;
 use App\Model\Image;
 use App\Model\Tag;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -16,34 +15,32 @@ class BlogController extends BackendController
 {
     public function blogs(Request $request)
     {
-        if ($request->isMethod('get'))
-        {
-            $cat=Category::all();
-            $this->data('cat',$cat);
-            $tag=Tag::all();
-            $this->data('tag',$tag);
-            $auth=Author::all();
-            $this->data('auth',$auth);
-            $blogs=Blog::all();
-            $blog=$blogs->unique('title');
-            $this->data('blog',$blog);
-            return view($this->backendblogpath.'blogs',$this->data);
+        if ($request->isMethod('get')) {
+            $cat = Category::all();
+            $this->data('cat', $cat);
+            $tag = Tag::all();
+            $this->data('tag', $tag);
+            $auth = Author::all();
+            $this->data('auth', $auth);
+            $blogs = Blog::all();
+            $blog = $blogs->unique('title');
+            $this->data('blog', $blog);
+            return view($this->backendblogpath . 'blogs', $this->data);
         }
-        if ($request->isMethod('post'))
-        {
+        if ($request->isMethod('post')) {
             $request->validate([
-                'name'=>'required',
-                'image_upload'=>'required',
-                'tags'=>'required',
-                'category'=>'required',
-                'author'=>'required',
+                'name' => 'required',
+                'image_upload' => 'required',
+                'tags' => 'required',
+                'category' => 'required',
+                'author' => 'required',
             ]);
-            $data['title']=$request->name;
-            $data['description']=$request->description;
-            $data['category_id']=$request->category;
-            $data['author_id']=$request->author;
-            $data['seo_keyword']=$request->seo_key;
-            $data['seo_description']=$request->seo_description;
+            $data['title'] = $request->name;
+            $data['description'] = $request->description;
+            $data['category_id'] = $request->category;
+            $data['author_id'] = $request->author;
+            $data['seo_keyword'] = $request->seo_key;
+            $data['seo_description'] = $request->seo_description;
             if ($request->hasfile('image_upload')) {
                 foreach ($request->file('image_upload') as $image) {
                     $name = str_random() . '.' . $image->getClientOriginalExtension();
@@ -52,18 +49,17 @@ class BlogController extends BackendController
                 }
             }
             $create = Blog::create($data);
-            $last_id=$create->id;
+            $last_id = $create->id;
             foreach ($save as $value) {
                 $item['image'] = $value;
                 $item['blog_id'] = $last_id;
                 $img = Image::create($item);
             }
             foreach ($request->tags as $value) {
-                 DB::table('blog_tags')->insert(['blog_id' => $last_id, 'tag_id' => $value]);
+                DB::table('blog_tags')->insert(['blog_id' => $last_id, 'tag_id' => $value]);
             }
-            if($create)
-            {
-                Session::flash('success','Blog added successfully');
+            if ($create) {
+                Session::flash('success', 'Blog added successfully');
                 return redirect()->back();
             }
 
@@ -72,20 +68,19 @@ class BlogController extends BackendController
 
     public function delete_blog($id)
     {
-        $find=Blog::findorfail($id);
-        $img=Image::where('blog_id','=',$id);
-        if ($img->delete()&&$this->delete_gallery($id)&&$find->delete())
-        {
-            Session::flash('success','Blog deleted successfully');
+        $find = Blog::findorfail($id);
+        $img = Image::where('blog_id', '=', $id);
+        if ($img->delete() && $this->delete_gallery($id) && $find->delete()) {
+            Session::flash('success', 'Blog deleted successfully');
             return redirect()->back();
         }
     }
+
     public function delete_gallery($id)
     {
         $findData = Blog::findorfail($id);
 
-        foreach ($findData->images as $value)
-        {
+        foreach ($findData->images as $value) {
             $deletePath = public_path('images/blogs/' . $value->image);
             if (file_exists($deletePath) && is_file($deletePath)) {
                 unlink($deletePath);
@@ -95,9 +90,19 @@ class BlogController extends BackendController
         return true;
     }
 
-    public function edit_blog()
+    public function edit_blog(Request $request)
     {
-
+        if ($request->isMethod('get')) {
+            $blog = Blog::where('id', '=', $request->id)->first();
+            $this->data('blog', $blog);
+            $tag = Tag::all();
+            $this->data('tag', $tag);
+            $cat = Category::all();
+            $this->data('cat', $cat);
+            $auth = Author::all();
+            $this->data('auth', $auth);
+            return view($this->backendblogpath . 'edit_blog', $this->data);
+        }
     }
 
     public function category(Request $request)
@@ -155,7 +160,7 @@ class BlogController extends BackendController
         if ($request->isMethod('post')) {
             $request->validate([
                 'name' => 'required|unique:authors,name',
-                'image'=>'required',
+                'image' => 'required',
             ]);
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
@@ -176,7 +181,7 @@ class BlogController extends BackendController
     public function delete_author($id)
     {
         $find = Author::findorfail($id);
-        if ($this->delete_file($id)&&$find->delete()) {
+        if ($this->delete_file($id) && $find->delete()) {
             Session::flash('success', 'Author deleted successfully');
             return redirect()->back();
         }
