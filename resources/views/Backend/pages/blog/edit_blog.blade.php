@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <h3 align="center">Add Blog</h3>
+                    <h3 align="center">Edit Blog</h3>
                     <hr>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -22,7 +22,7 @@
                                         <div class="col-sm-4">
                                             <div class="form-group ">
                                                 <label for="name" class="control-label">Title*</label>
-                                                <input class="form-control" name="name" type="text" id="name">
+                                                <input class="form-control" name="name" type="text" value="{{$blog->title}}">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
@@ -48,7 +48,8 @@
                                                 <label for="name" class="control-label">Tags*</label>
                                                 <select class="form-control" id="tag" multiple name="tags[]">
                                                     @foreach($tag as $value)
-                                                        <option value="{{$value->id}}">{{$value->name}}</option>
+                                                        <option {{\Illuminate\Support\Facades\DB::table('blog_tags')->where('blog_id',$blog->id)->where('tag_id',$value->id)->first() ? 'selected':''}}
+                                                                value="{{$value->id}}">{{$value->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -58,8 +59,8 @@
                                                 <label for="name" class="control-label">Category *</label>
                                                 <select class="form-control" name="category">
                                                     <option selected>Select category</option>
-                                                    @foreach($cat as $value)
-                                                        <option value="{{$value->id}}">{{$value->name}}</option>
+                                                    @foreach($category as $value)
+                                                        <option @if($value->id==$blog->categories->id) selected @endif value="{{$value->id}}">{{$value->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -72,7 +73,8 @@
                                                 <select class="form-control" name="author">
                                                     <option selected>Select author</option>
                                                     @foreach($auth as $value)
-                                                        <option value="{{$value->id}}">{{$value->name}}</option>
+
+                                                        <option @if($value->id==$blog->authors->id) selected @endif value="{{$value->id}}">{{$value->name}}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -80,13 +82,13 @@
                                         <div class="col-sm-4">
                                             <div class="form-group ">
                                                 <label for="name" class="control-label">SEO Keywords *</label>
-                                                <input class="form-control" name="seo_key" type="text" id="name">
+                                                <input class="form-control" name="seo_key" type="text" value="{{$blog->seo_keyword}}">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group ">
                                                 <label for="name" class="control-label">SEO Description *</label>
-                                                <input class="form-control" name="seo_description" type="text" id="name">
+                                                <input class="form-control" name="seo_description" type="text" value="{{$blog->seo_description}}">
                                             </div>
                                         </div>
                                     </div>
@@ -97,7 +99,7 @@
                                             <label for="name" class="control-label">Blog Description*</label>
                                             <textarea id="desc"
                                                       name="description"
-                                                      class="form-control"></textarea></div>
+                                                      class="form-control">{{$blog->description}}</textarea></div>
                                     </div>
 
 
@@ -105,7 +107,8 @@
 
                                 <div>
 
-                                    <button type="submit" class="btn btn-primary">Add Blog</button>
+                                    <button type="submit" class="btn btn-primary">Update Blog</button>
+                                    <a href="{{route('blog')}}" class=" btn btn-danger"><i class="fa fa-backward"></i>Back</a>
 
 
                                     <!-- /.box-body -->

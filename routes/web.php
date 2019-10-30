@@ -13,10 +13,11 @@
 
 Route::group(['namespace' => 'Frontend'], function () {
 
-    Route::any('/','IndexController@index')->name('index');
-    Route::any('/blogs/{id?}','IndexController@blogs')->name('blogs');
+    Route::any('/', 'IndexController@index')->name('index');
+    Route::any('/blogs/{id?}', 'IndexController@blogs')->name('blogs');
+    Route::any('/blogscategory/{id?}', 'IndexController@blogscategory')->name('blog-category');
+    Route::any('/about', 'IndexController@about')->name('about');
 
-//
 });
 Route::group(['namespace' => 'Backend'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');

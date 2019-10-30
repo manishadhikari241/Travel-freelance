@@ -14,9 +14,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $cat=Category::all();
-        $this->data('category',$cat);
-        return view('Frontend.index',$this->data);
+        $cat = Category::all();
+        $this->data('category', $cat);
+        return view('Frontend.index', $this->data);
     }
 
     public function blogs($id)
@@ -30,5 +30,29 @@ class IndexController extends Controller
         $tag=Tag::all();
         $this->data('tags',$tag);
         return view('Frontend.pages.blog_single',$this->data);
+    }
+
+    public function blogscategory(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('Frontend.pages.destination');
+
+        }
+        return false;
+    }
+
+    public function about(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('Frontend.pages.about');
+
+        }
+    }
+    public function all_blogs(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view('Frontend.pages.allblogs');
+
+        }
     }
 }

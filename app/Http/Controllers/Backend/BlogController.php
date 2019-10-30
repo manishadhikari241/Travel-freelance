@@ -98,7 +98,7 @@ class BlogController extends BackendController
             $tag = Tag::all();
             $this->data('tag', $tag);
             $cat = Category::all();
-            $this->data('cat', $cat);
+            $this->data('category', $cat);
             $auth = Author::all();
             $this->data('auth', $auth);
             return view($this->backendblogpath . 'edit_blog', $this->data);
