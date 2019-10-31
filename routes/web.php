@@ -45,7 +45,9 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::get('advertisement-delete/{id}', 'SlideController@advertisement_delete')->name('advertisement-delete');
         Route::any('advertisement-edit/{id?}', 'SlideController@advertisement_edit')->name('advertisement-edit');
 
-
+    });
+    Route::group(['prefix' => 'Setting'], function () {
+        Route::any('setting-page', 'SettingController@setting_page')->name('setting-page');
     });
 });
 

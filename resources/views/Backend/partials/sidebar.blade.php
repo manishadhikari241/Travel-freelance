@@ -82,11 +82,11 @@
                         Advertisement
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Forms</li>
+                <li class="app-sidebar__heading">Setting</li>
                 <li>
-                    <a href="forms-controls.html">
-                        <i class="metismenu-icon pe-7s-mouse">
-                        </i>Forms Controls
+                    <a href="{{route('setting-page')}}">
+                        <i class="metismenu-icon pe-7s-settings">
+                        </i>Setting
                     </a>
                 </li>
                 <li>
