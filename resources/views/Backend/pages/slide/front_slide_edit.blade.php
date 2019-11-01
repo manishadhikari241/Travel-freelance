@@ -30,29 +30,20 @@
                             <div class="box box-default">
                                 <div class="box-body">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-5">
                                             <div class="form-group ">
                                                 <label for="name" class="control-label">Heading</label>
                                                 <input value="{{$slide->header}}" class="form-control" name="heading"
                                                        type="text" id="name">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group ">
-                                                <label for="short_description" class="control-label">Short
-                                                    Description</label>
-                                                <textarea name="short_description" class="form-control"
-                                                          id="desc">{!! $slide->short_description !!}</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
+
+                                        <div class="col-sm-5">
                                             <div class="form-group ">
                                                 <label for="status" class="control-label">Image*(Use Large Size
                                                     Image)</label>
                                                 <input type="file" class="form-control" name="front_slide">
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label class="">Current Slide Image</label>
                                                 <div class="container">
@@ -64,12 +55,28 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="form-group ">
+                                                <label for="status" class="control-label">Slide Link</label>
+                                                <input type="text" class="form-control" name="link" value="{{$slide->link}}">
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                     <div class="row">
 
-
+                                        <div class="col-sm-10">
+                                            <div class="form-group ">
+                                                <label for="short_description" class="control-label">Short
+                                                    Description</label>
+                                                <textarea name="short_description" class="form-control"
+                                                          id="desc">{!! $slide->short_description !!}</textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

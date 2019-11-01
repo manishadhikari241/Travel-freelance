@@ -18,6 +18,7 @@ class CreateFrontslidesTable extends Migration
             $table->string('header','1000');
             $table->string('short_description','2000');
             $table->string('image');
+            $table->string('link');
             $table->timestamps();
         });
     }

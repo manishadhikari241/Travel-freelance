@@ -28,6 +28,7 @@ class BlogController extends BackendController
             return view($this->backendblogpath . 'blogs', $this->data);
         }
         if ($request->isMethod('post')) {
+
             $request->validate([
                 'name' => 'required',
                 'image_upload' => 'required',
@@ -41,6 +42,8 @@ class BlogController extends BackendController
             $data['author_id'] = $request->author;
             $data['seo_keyword'] = $request->seo_key;
             $data['seo_description'] = $request->seo_description;
+            $data['popular']=$request->popular;
+            $data['featured']=$request->featured;
             if ($request->hasfile('image_upload')) {
                 foreach ($request->file('image_upload') as $image) {
                     $name = str_random() . '.' . $image->getClientOriginalExtension();

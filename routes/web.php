@@ -44,6 +44,11 @@ Route::group(['namespace' => 'Backend'], function () {
         Route::get('slide-delete/{id}', 'SlideController@slide_delete')->name('slide-delete');
         Route::get('advertisement-delete/{id}', 'SlideController@advertisement_delete')->name('advertisement-delete');
         Route::any('advertisement-edit/{id?}', 'SlideController@advertisement_edit')->name('advertisement-edit');
+    });
+    Route::group(['prefix' => 'Team'], function () {
+        Route::any('/our-team', 'TeamController@team')->name('team');
+        Route::any('delete-team/{id}', 'TeamController@delete_team')->name('delete-team');
+        Route::any('edit-team/{id?}', 'TeamController@edit_team')->name('edit-team');
 
     });
     Route::group(['prefix' => 'Setting'], function () {

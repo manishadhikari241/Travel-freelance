@@ -34,7 +34,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-4">
+                                            <div class="form-group ">
+                                                <label for="status" class="control-label">Slide Link</label>
+                                                <input type="text" class="form-control" name="link">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
                                             <div class="form-group ">
                                                 <label for="short_description" class="control-label">Short
                                                     Description</label>
@@ -84,9 +91,10 @@
                             <thead>
                             <tr>
                                 <th>Sn</th>
+                                <th><i class="fa fa-image"></i></th>
                                 <th>Main Header</th>
                                 <th>Description</th>
-                                <th><i class="fa fa-image"></i></th>
+                                <th>Link</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -95,10 +103,10 @@
                             @foreach($slides as $key => $value)
                                 <tr>
                                     <td>{{++$key}}</td>
-
+                                    <td><img src="{{asset('images/slides/'.$value->image)}}" width="100px"></td>
                                     <td>{{$value->header}}</td>
                                     <td>{!! $value->short_description !!}</td>
-                                    <td><img src="{{asset('images/slides/'.$value->image)}}" width="100px"></td>
+                                    <td>{{$value->link}}</td>
                                     <td>
                                         <a href="{{route('slide-delete',$value->id)}}"
                                            onclick="return confirm('Are you sure??')" class="btn btn-sm btn btn-danger"><i

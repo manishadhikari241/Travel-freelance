@@ -17,6 +17,8 @@ class CreateBlogsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->longText('description');
+            $table->string('featured')->nullable();
+            $table->string('popular')->nullable();
             $table->integer('author_id')->unsigned();
             $table->foreign('author_id')->references('id')->on('authors');
             $table->integer('category_id')->unsigned();

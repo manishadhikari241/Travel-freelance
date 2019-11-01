@@ -21,7 +21,8 @@ class SlideController extends BackendController
             $request->validate([
                 'heading' => 'required|min:3|max:999',
                 'short_description' => 'required|min:3|max:1500',
-                'front_slide' => 'required'
+                'front_slide' => 'required',
+                'link'=>'required'
             ]);
             if ($request->hasFile('front_slide')) {
                 $image = $request->file('front_slide');
@@ -32,7 +33,8 @@ class SlideController extends BackendController
             $insert = Frontslide::create([
                 'header' => $request->heading,
                 'short_description' => $request->short_description,
-                'image' => $name
+                'image' => $name,
+                'link'=>$request->link,
             ]);
             if ($insert) {
                 return redirect()->back()->with('success', 'Slides inserted');
@@ -76,6 +78,7 @@ class SlideController extends BackendController
             }
             $data['header'] = $request->heading;
             $data['short_description'] = $request->short_description;
+            $data['link']=$request->link;
 
             $update = Frontslide::where('id', '=', $request->id)->update($data);
             if ($update) {

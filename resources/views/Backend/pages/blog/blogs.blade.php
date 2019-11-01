@@ -29,9 +29,10 @@
                                             <div class="form-group">
                                                 <hr>
                                                 <input type="checkbox" name="popular" value="popular">Popular<br>
-                                                <input type="checkbox" name="not_popular" value="not_popular">Not popular<br>
+                                                <input type="checkbox" name="featured" value="featured">Featured<br>
                                             </div>
                                         </div>
+                                       
                                         <div class="col-sm-4">
 
                                             <div class="form-group ">

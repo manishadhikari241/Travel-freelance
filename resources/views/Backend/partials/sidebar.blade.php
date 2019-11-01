@@ -72,17 +72,17 @@
                 <li class="app-sidebar__heading">Slides</li>
                 <li>
                     <a href="{{route('slide-front')}}">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="metismenu-icon pe-7s-photo"></i>
                         Frotnpage Sliders
                     </a>
                 </li>
                 <li>
                     <a href="{{route('advertisement')}}">
-                        <i class="metismenu-icon pe-7s-display2"></i>
+                        <i class="metismenu-icon pe-7s-plugin"></i>
                         Advertisement
                     </a>
                 </li>
-                <li class="app-sidebar__heading">Setting</li>
+                <li class="app-sidebar__heading">Miscellaneous</li>
                 <li>
                     <a href="{{route('setting-page')}}">
                         <i class="metismenu-icon pe-7s-settings">
@@ -90,9 +90,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
-                        <i class="metismenu-icon pe-7s-eyedropper">
-                        </i>Forms Layouts
+                    <a href="{{route('team')}}">
+                        <i class="metismenu-icon pe-7s-users">
+                        </i>Team Members
                     </a>
                 </li>
                 <li>
