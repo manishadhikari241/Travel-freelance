@@ -52,8 +52,8 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group ">
-                                        <label for="name" class="control-label">Staff Position</label>
-                                        <input class="form-control" name="position" value="{{$team->position}}" type="text" id="name">
+                                        <label for="name" class="control-label">Staff Description</label>
+                                        <textarea name="description" id="desc">{{$team->description}}</textarea>
 
                                     </div>
                             </div>

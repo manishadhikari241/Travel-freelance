@@ -42,8 +42,8 @@
                                         <div class="col-sm-12">
                                             <div class="form-group ">
                                                 <label for="name" class="control-label">Staff Description</label>
-                                                <input class="form-control" name="description" type="text" id="desc">
-
+                                                {{--<input class="form-control" name="description" type="text" id="desc">--}}
+                                            <textarea name="description" id="desc"></textarea>
                                             </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                                     <td>{{++$key}}</td>
                                     <td><img src="{{asset('images/team/'.$value->image)}}" width="80px"></td>
                                     <td>{{$value->name}}</td>
-                                    <td>{{$value->position}}</td>
+                                    <td>{!! $value->description !!}</td>
                                     <td>
                                         <a href="{{route('delete-team',$value->id)}}" onclick="return confirm('Confirm Delete?')"
                                            class="btn btn-sm btn btn-danger"><i class="fa fa-trash"></i> </a>

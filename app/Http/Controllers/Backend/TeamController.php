@@ -20,7 +20,7 @@ class TeamController extends BackendController
         if ($request->isMethod('post')) {
             $request->validate([
                 'name' => 'required',
-//                'description' => 'required',
+                'description' => 'required',
                 'image' => 'required'
             ]);
             if ($request->hasFile('image')) {
